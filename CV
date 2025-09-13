@@ -1,0 +1,178 @@
+\documentclass[11pt,a4paper]{article}
+
+% ===== Paquetes base =====
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% ===== Estilo y color =====
+\usepackage{xcolor}
+\usepackage{pagecolor}
+\pagecolor{gray!12} % fondo de toda la página (más gris que antes)
+
+% Color corporativo para secciones
+\definecolor{myblue}{RGB}{0,70,140}
+
+% Secciones con línea horizontal bajo el título
+\titleformat{\section}
+  {\large\bfseries\color{myblue}} % formato
+  {}                              % etiqueta (vacío para \section*)
+  {0em}                           % separación etiqueta-título
+  {}                              % código antes del título
+  [\vspace{0.25em}{\color{gray!55}\titlerule[0.8pt]}] % línea bajo el título
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{myblue}}
+  {}
+  {0em}
+  {}
+  [\vspace{0.25em}{\color{gray!45}\titlerule[0.6pt]}]
+
+\titlespacing*{\section}{0pt}{1.0em}{0.6em}
+\titlespacing*{\subsection}{0pt}{0.8em}{0.4em}
+
+% Estilo de enlaces
+\hypersetup{
+  colorlinks=true,
+  urlcolor=myblue,
+  linkcolor=myblue
+}
+
+% Caja de encabezado
+\usepackage[most]{tcolorbox}
+\tcbset{
+  colback=gray!10,
+  colframe=gray!35,
+  boxrule=0.6pt,
+  arc=3mm,
+  left=8pt,right=8pt,top=8pt,bottom=8pt
+}
+
+% Viñetas
+\renewcommand{\labelitemi}{$\bullet$}
+
+\begin{document}
+
+% ===== Encabezado con foto en caja =====
+\begin{tcolorbox}
+  \noindent
+  \begin{minipage}{0.72\textwidth}
+    {\LARGE \textbf{Ángel Daniel García González}} \\[0.2cm]
+    Madrid, España \\
+    Tel: \href{https://wa.me/34626366000}{+34 626 366 000} \\ % enlace a WhatsApp
+    \href{mailto:angeldaniel.es@hotmail.com}{angeldaniel.es@hotmail.com} \\ % salto de línea 
+    \href{mailto:angeldaniel.es@gmail.com}{angeldaniel.es@gmail.com} \\
+  \end{minipage}\hfill
+  \begin{minipage}{0.24\textwidth}
+    \raggedleft
+    \includegraphics[width=3cm,clip,keepaspectratio]{foto CV.jpg}
+  \end{minipage}
+\end{tcolorbox}
+
+
+% ===== Perfil =====
+\section*{Perfil profesional}
+Administrador de sistemas y programador con formación superior en \textbf{Sistemas Informáticos y Redes} y experiencia en infraestructuras IT, desarrollo web y bases de datos. Experiencia gestionando redes, servidores, \textit{e}-commerce y proyectos de software. Destaco por la resolución de problemas, automatización de procesos y la integración de administración de sistemas con programación y ciberseguridad, ademas de gran capacidad para aprender nuevos lenguajes y adaptarme a diferentes entornos de trabajo. 
+
+% ===== Formación =====
+\section*{Formación académica}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Ciclo Formativo de Grado Superior en Sistemas Informáticos y Redes} — IES Enrique Tierno Galván (2017--2018)
+  \item \textbf{Ciclo Formativo de Grado Medio en Soldadura} — IES Juan de la Cierva (2012--2013)
+  \item \textbf{Bachillerato de Artes} — IES Isabel la Católica (2010)
+  \item \textbf{ESO} — IES Isabel la Católica (2008)
+\end{itemize}
+
+% ===== Experiencia =====
+\section*{Experiencia profesional}
+\textbf{Responsable del departamento informático} — Yamovil S.L. (2018--2023)
+\begin{itemize}[leftmargin=*]
+  \item Administración y mantenimiento de sistemas Windows/Linux.
+  \item Redes, servidores, copias de seguridad y seguridad informática.
+  \item Soporte a usuarios y coordinación del área IT.
+  \item Desarrollo y mantenimiento de soluciones web internas.\\
+  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Certificado_de_funciones.jpg}{[Ver Certificado de Funciones]}
+\end{itemize}
+
+
+\textbf{Responsable del departamento gráfico y coordinador de soporte web} — Yamovil S.L. (2016--2018)
+\begin{itemize}[leftmargin=*]
+  \item Gestión del \textit{e}-commerce e infraestructura online.
+  \item Administración de bases de datos.
+  \item Coordinación técnica para soporte y optimización web.
+\end{itemize}
+
+\textbf{Fotógrafo, diseñador gráfico y operador de \textit{e}-commerce} — Yamovil S.L. (2010--2016)
+\begin{itemize}[leftmargin=*]
+  \item Producción de contenidos visuales y gestión de plataforma online.
+\end{itemize}
+
+\textbf{Product management en marketplace Amazon} — 2024--actualidad
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Creación y administración de marca propia}: Elaboración de diseños originales y gestión de ventas a través de Amazon: \href{https://www.amazon.es/s?rh=n%3A2846220031%2Cp_4%3AOtaku%2BStreet&ref=bl_sl_s_ap_web_2846220031}{Marketplace en www.amazon.es}.
+\end{itemize}
+
+% ===== Habilidades =====
+\section*{Habilidades técnicas}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Programación:} PHP (avanzado); C\#, .NET, Python (medio); JavaScript (iniciado)
+  \item \textbf{Bases de datos:} MySQL, PL/SQL, Oracle (avanzado)
+  \item \textbf{Web:} HTML, CSS, WordPress (avanzado)
+  \item \textbf{Scripting:} PowerShell (medio)
+  \item \textbf{Sistemas operativos:} Windows Server, Linux
+  \item \textbf{Redes y sistemas:} routers, switches, VLANs, VPNs, firewalls
+  \item \textbf{Virtualización y cloud:} VMware, Hyper{-}V, AWS, Azure
+  \item \textbf{Admin:} Active Directory, Docker, Git, Jenkins
+  \item \textbf{Ofimática avanzada:} Microsoft Office (nivel profesional)
+\end{itemize}
+
+% ===== Herramientas de diseño =====
+\section*{Herramientas de diseño y multimedia}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Diseño de imagen:} Adobe Photoshop, Adobe Ilustrator, Canva y GIMP (nivel profesional)
+  \item \textbf{Edición de vídeo:} Adobe Premiere, After Effects, Camtasia Studio, Filmora, InShot (nivel profesional)
+  \item \textbf{Edición de audio:} Audacity (nivel avanzado)
+\end{itemize}
+
+%% ===== Cursos =====
+\section*{Cursos y certificaciones}
+\begin{itemize}[leftmargin=*]
+ \item Ciberseguridad — Universidad Rey Juan Carlos (12/2017) \\
+\href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Titulo_Ciberseguridad.jpg}{[Ver Certificado]}
+  \item Inteligencia Artificial y Productividad — Google (05/2025) \\  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Curso_IA_pagina_1.jpg}{[Ver Certificado]}
+  \item Python con Cursor — Santander Open Academy (09/2025)
+  \item Programación en .NET — Idel (10/2025)
+\end{itemize}
+
+% ===== Voluntariado =====
+\section*{Voluntariado}
+\begin{itemize}[leftmargin=*]
+  \item Hospital Niño Jesús (2013--2016): talleres y actividades para niños hospitalizados.
+  \item Curso de formación de voluntariado — Comunidad de Madrid (2013) \\
+  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/titulo_voluntariado.jpg}{[Ver Certificado]}
+\end{itemize}
+
+% ===== Extra =====
+\section*{Información adicional}
+\begin{itemize}[leftmargin=*]
+  \item Vehículo propio (coche y moto). 
+  \item Disponibilidad inmediata.
+  \item Inscrito en demanda de empleo.
+\end{itemize}
+% ===== Nota final =====
+\vspace{0.5cm}
+\begin{center}
+    \textit{Este CV ha sido desarrollado en \LaTeX. 
+    El código fuente completo está disponible en: 
+    \href{https://github.com/AngelDanielGG/CV}{github.com/AngelDanielGG/CV}}
+\end{center}
+
+\end{document}
