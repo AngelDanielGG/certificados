@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 
 % ===== Paquetes base =====
 \usepackage[spanish]{babel}
@@ -6,31 +6,31 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{geometry}
-% Márgenes compactos (página 1 recoge habilidades y herramientas; exp. va en página 2)
-\geometry{top=1.5cm, bottom=1.7cm, left=1.6cm, right=1.6cm}
+\geometry{top=1.3cm, bottom=1.4cm, left=1.4cm, right=1.4cm}
 \usepackage{enumitem}
 \usepackage{parskip}
 \usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{microtype}
+\usepackage{multicol}
 
 % Ajustes de compacidad
-\renewcommand{\baselinestretch}{1.1} % más espacio entre líneas
-\setlist{leftmargin=*, nosep}         % listas sin espacio extra
-\sloppy                               % evita overfull hboxes
+\renewcommand{\baselinestretch}{0.75}
+\setlist{leftmargin=*, nosep}
+\sloppy
 
 % ===== Estilo y color =====
 \usepackage{xcolor}
 \usepackage{pagecolor}
-\pagecolor{gray!12} % fondo de toda la página
+\pagecolor{gray!12}
 
-% Color corporativo para secciones
-\definecolor{myblue}{RGB}{0,70,140}
+% Colores personalizados
+\definecolor{myblue}{RGB}{0,70,140}      % azul para títulos
+\definecolor{mymagenta}{RGB}{120,0,160}  % morado para enlaces
 
-% Secciones con línea bajo el título (compacto)
 \titleformat{\section}
-  {\large\bfseries\color{myblue}}
+  {\normalsize\bfseries\color{myblue}}
   {}
   {0em}
   {}
@@ -46,11 +46,11 @@
 \titlespacing*{\section}{0pt}{0.5em}{0.3em}
 \titlespacing*{\subsection}{0pt}{0.4em}{0.2em}
 
-% Estilo de enlaces
+% Estilo de enlaces (morado)
 \hypersetup{
   colorlinks=true,
-  urlcolor=myblue,
-  linkcolor=myblue
+  urlcolor=mymagenta,
+  linkcolor=mymagenta
 }
 
 % Caja de encabezado
@@ -66,9 +66,13 @@
 % Viñetas
 \renewcommand{\labelitemi}{$\bullet$}
 
+% Separador entre columnas
+\setlength{\columnseprule}{0.3pt}
+\def\columnseprulecolor{\color{gray!40}}
+
 \begin{document}
 
-% ===== Encabezado con foto en caja =====
+% ===== Encabezado con foto =====
 \begin{tcolorbox}
   \noindent
   \begin{minipage}{0.72\textwidth}
@@ -80,7 +84,6 @@
   \end{minipage}\hfill
   \begin{minipage}{0.24\textwidth}
     \raggedleft
-    % Foto con sombra elegante (tcolorbox)
     \tcbox[
       enhanced,
       colframe=white,
@@ -89,49 +92,27 @@
       arc=3mm,
       drop shadow
     ]{%
-      \includegraphics[width=3cm,keepaspectratio]{Foto Carnet.jpg}%
+      \includegraphics[width=2.2cm,keepaspectratio]{Foto Carnet.jpg}% <-- tamaño reducido
     }
   \end{minipage}
 \end{tcolorbox}
 
-% ===== Perfil =====
+% ===== CONTENIDO EN DOS COLUMNAS =====
+\begin{multicols}{2}
+
+% ===== COLUMNA IZQUIERDA =====
 \section*{Perfil profesional}
 Administrador de sistemas y programador con formación superior en \textbf{Sistemas Informáticos y Redes} y experiencia en infraestructuras IT, desarrollo web y bases de datos. Experiencia gestionando redes, servidores, \textit{e}-commerce y proyectos de software. Destaco por la resolución de problemas, automatización de procesos y la integración de administración de sistemas con programación y ciberseguridad, además de gran capacidad para aprender nuevos lenguajes y adaptarme a diferentes entornos de trabajo. 
 
-% ===== Formación =====
-\section*{Formación académica y Certificaciones}
-
-{\small\textbf{Formación académica:}}
-\begin{itemize}
-  \item \textbf{Ciclo Formativo de Grado Superior en Sistemas Informáticos y Redes} — IES Enrique Tierno Galván (2016--2018)
-  \item \textbf{Ciclo Formativo de Grado Medio en Soldadura con mención de honor} — IES Juan de la Cierva (2011--2013)
-  \item \textbf{Bachillerato de Artes} — IES Isabel la Católica (2010)
-\end{itemize}
-
-{\small\textbf{Certificaciones:}}
-\begin{itemize}
-  \item Programación C\# .NET — Idel (Actualmente)
-  \item Cursor con Python: desarrollo inteligente con IA — Santander Open Academy (09/2025)\\
-  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Cursor_con_Python_desarrollo_inteligente_con_IA.jpg}{[Ver Certificado]}
-  \item Inteligencia Artificial y Productividad — Google (05/2025)\\
-  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Curso_IA_pagina_1.jpg}{[Ver Certificado]}
-  \item Ciberseguridad — Universidad Rey Juan Carlos (12/2017)\\
-  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Titulo_Ciberseguridad.jpg}{[Ver Certificado]}
-
-
-
-\end{itemize}
-
-% ===== Habilidades + Herramientas en dos columnas =====
 \section*{Habilidades técnicas y Herramientas de diseño}
 
-\begin{minipage}[t]{0.48\textwidth}
 \textbf{Habilidades técnicas}
 \begin{itemize}
-  \item \textbf{Programación:} PHP; C\#, Python; JavaScript
+  \item \textbf{Programación:} PHP, C\#, Python, JavaScript
   \item \textbf{Frameworks:} .NET, Django, Node.js
   \item \textbf{Bases de datos:} MySQL, PL/SQL (Oracle)
-  \item \textbf{Web:} HTML, CSS, WordPress
+  \item \textbf{Web:} HTML, CSS, WordPress, Chatbot\\
+  \href{https://wa.me/+34632482294}{[Chatbot: Pregúntale sobre mi perfil laboral]}
   \item \textbf{Scripting:} PowerShell
   \item \textbf{Sistemas operativos:} Windows Server, Linux
   \item \textbf{Redes y sistemas:} routers, switches, VLANs, VPNs, firewalls
@@ -139,64 +120,89 @@ Administrador de sistemas y programador con formación superior en \textbf{Siste
   \item \textbf{Admin:} Active Directory, Docker, Git, Jenkins
   \item \textbf{Ofimática avanzada:} Microsoft Office
 \end{itemize}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.48\textwidth}
+
+\vspace{0.25cm}
 \textbf{Herramientas de diseño y multimedia}
 \begin{itemize}
-  \item \textbf{Diseño de imagen:} Adobe Photoshop, Adobe Illustrator, Canva, GIMP
-  \item \textbf{Edición de vídeo:} Adobe Premiere, After Effects, Camtasia Studio, Filmora, InShot
-  \item \textbf{Edición de audio:} Audacity
+  \item \textbf{Diseño:} Photoshop, Illustrator, Canva, GIMP
+  \item \textbf{Vídeo:} Premiere, After Effects, Camtasia, Filmora
+  \item \textbf{Audio:} Audacity
 \end{itemize}
-\end{minipage}
 
-% ===== Fuerza el salto para que la experiencia empiece en la página 2 =====
-\newpage
-
-% ===== Experiencia =====
-\section*{Experiencia profesional}
-\textbf{Responsable del departamento informático} — Yamovil S.L. (2018--2023)
+\vspace{0.25cm}
+\section*{Información adicional}
 \begin{itemize}
-  \item Administración y mantenimiento de sistemas Windows/Linux.
-  \item Redes, servidores, copias de seguridad y seguridad informática.
-  \item Soporte a usuarios y coordinación del área IT.
-  \item Desarrollo y mantenimiento de soluciones web internas.\\
-  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Certificado_de_funciones.jpg}{[Ver Certificado de Funciones]}
+  \item Vehículo propio (coche y moto)
+  \item Disponibilidad inmediata
+  \item Carnet de discapacidad 45\%
+  \item Inscrito en demanda de empleo
+  \item CV desarrollado en \LaTeX\\
+  \href{https://github.com/AngelDanielGG/certificados/blob/main/CV}{[Ver código]}
 \end{itemize}
 
-\textbf{Responsable del departamento gráfico y coordinador de soporte web} — Yamovil S.L. (2016--2018)
-\begin{itemize}
-  \item Gestión del \textit{e}-commerce e infraestructura online.
-  \item Administración de bases de datos.
-  \item Coordinación técnica para soporte y optimización web.
-\end{itemize}
-
-\textbf{Fotógrafo, diseñador gráfico y operador de \textit{e}-commerce} — Yamovil S.L. (2010--2016)
-\begin{itemize}
-  \item Producción de contenidos visuales y gestión de plataforma online.
-\end{itemize}
-
-\textbf{Product management en marketplace Amazon} — 2024--actualidad
-\begin{itemize}
-  \item \textbf{Creación y administración de marca propia}: Elaboración de diseños originales y gestión de ventas a través de Amazon: \href{https://www.amazon.es/s?rh=n%3A2846220031%2Cp_4%3AOtaku%2BStreet&ref=bl_sl_s_ap_web_2846220031}{Marketplace en www.amazon.es}.
-\end{itemize}
-
-% ===== Voluntariado =====
 \section*{Voluntariado}
 \begin{itemize}
-  \item Hospital Niño Jesús (2013--2016): talleres y actividades para niños hospitalizados.
+  \item Hospital Niño Jesús (2013--actualidad): talleres y actividades para niños hospitalizados
   \item Curso de formación de voluntariado — Comunidad de Madrid (2013)\\
   \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/titulo_voluntariado.jpg}{[Ver Certificado]}
 \end{itemize}
 
-% ===== Extra =====
-\section*{Información adicional}
+\vfill\null
+\columnbreak
+
+% ===== COLUMNA DERECHA =====
+\section*{Formación académica y Certificaciones}
+
+{\small\textbf{Formación académica:}}
 \begin{itemize}
-  \item Vehículo propio (coche y moto).
-  \item Disponibilidad inmediata.
-     \item Carnet de discapacidad 45\%
-  \item Inscrito en demanda de empleo.
-  \item Para mayor compatibilidad, este CV en PDF ha sido desarrollado en lenguaje de marcado .tex\\
-  \href{https://github.com/AngelDanielGG/certificados/blob/main/CV}{[Ver código]}
+  \item \textbf{Ciclo Formativo de Grado Superior en Sistemas Informáticos y Redes} — IES Enrique Tierno Galván (2016--2018)\\
+  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Titulo%20Superior%20Sistemas%20y%20Redes.jpg}{[Ver Título]}
+  \item \textbf{Ciclo Formativo de Grado Medio en Soldadura con Mención de Honor} — IES Juan de la Cierva (2011--2013)\\
+  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Titulo%20FP%20Soldadura%20.jpg}{[Ver Título]}
+  \item \textbf{Bachillerato de Artes} — IES Isabel la Católica (2010)
 \end{itemize}
 
+{\small\textbf{Certificaciones:}}
+\begin{itemize}
+  \item Administración y Desarrollo Bases de Datos — Core Network (En proceso)
+  \item Oracle Database PL/SQL Developer Certified Professional 1Z0-149 — Oracle (En proceso)
+  \item Programación C\# .NET — Idel (10/2025)
+  \item Python — Santander Open Academy (09/2025)\\
+  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Curso_Python.jpg}{[Ver Certificado]}
+  \item Cursor con Python: desarrollo inteligente con IA — Santander Open Academy (09/2025)\\
+  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Cursor_con_Python_desarrollo_inteligente_con_IA.jpg}{[Ver Certificado]}
+  \item Inteligencia Artificial y Productividad — Google (05/2025)\\
+  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Curso_IA_pagina_1.jpg}{[Ver Certificado]}
+  \item Ciberseguridad — Universidad Rey Juan Carlos (12/2017)\\
+  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Titulo_Ciberseguridad.jpg}{[Ver Certificado]}
+\end{itemize}
+
+\section*{Experiencia profesional}
+\textbf{Responsable del departamento informático} — Yamovil S.L. (2018--2023)
+\begin{itemize}
+  \item Administración y mantenimiento de sistemas Windows/Linux
+  \item Redes, servidores, copias de seguridad y seguridad informática
+  \item Soporte a usuarios y coordinación del área IT
+  \item Desarrollo y mantenimiento de soluciones web internas\\
+  \href{https://raw.githubusercontent.com/AngelDanielGG/certificados/main/Certificado_de_funciones.jpg}{[Ver Certificado de Funciones]}
+\end{itemize}
+
+\textbf{Responsable del departamento gráfico y soporte web} — Yamovil S.L. (2016--2018)
+\begin{itemize}
+  \item Gestión del \textit{e}-commerce e infraestructura online
+  \item Administración de bases de datos y soporte técnico web
+\end{itemize}
+
+\textbf{Fotógrafo, diseñador gráfico y operador de \textit{e}-commerce} — Yamovil S.L. (2010--2016)
+\begin{itemize}
+  \item Producción de contenidos visuales y gestión de plataforma online
+\end{itemize}
+
+\textbf{Product management en marketplace Amazon} — (2024--actualidad)
+\begin{itemize}
+  \item \textbf{Creación y administración de marca propia:} Elaboración de diseños originales y gestión de ventas en Amazon\\
+  \href{https://www.amazon.es/s?rh=n%3A2846220031%2Cp_4%3AOtaku%2BStreet&ref=bl_sl_s_ap_web_2846220031}{Marketplace en www.amazon.es}
+\end{itemize}
+
+\end{multicols}
 \end{document}
